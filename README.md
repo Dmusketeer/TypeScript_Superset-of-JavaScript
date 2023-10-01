@@ -783,3 +783,141 @@ let myVariable: never;
 In this example, the `myVariable` variable is declared to be of type `never`, which means that it should never be assigned a value. If you try to assign a value to the variable, it will throw an error indicating that it should never be assigned a value.
 
 Using the `never` type can help you catch errors and prevent unexpected behavior in your code. It can also make your code more readable and easier to understand, as it clearly indicates which functions and variables should never be called or assigned a value.
+
+Assertions
+-----------
+
+In TypeScript, assertions are a way to tell the compiler that a certain condition is always true at a specific point in the code. This can be useful for a few reasons:
+
+1. It can help the compiler understand the code better, which can lead to better error messages and better type checking.
+2. It can help you catch errors earlier, by making it clear to the compiler that certain conditions are always true.
+3. It can make the code easier to read and understand, by making it clear what the code is doing and why.
+
+There are several different types of assertions that can be used in TypeScript, including:
+
+1. `assert`: This is the most basic type of assertion, and it simply tells the compiler that a certain condition is always true. For example:
+```ts
+assert(x > 0);
+```
+This tells the compiler that the variable `x` is always greater than 0.
+
+2. `assert.ok`: This is similar to `assert`, but it allows you to specify a message that will be displayed if the assertion fails. For example:
+```ts
+assert.ok(x > 0, "x must be greater than 0");
+```
+This tells the compiler that the variable `x` is always greater than 0, and if it's not, it will display the message "x must be greater than 0".
+
+3. `assert.equal`: This is used to compare two values and make sure they are equal. For example:
+```ts
+assert.equal(x, 5);
+```
+This tells the compiler that the variable `x` is always equal to 5.
+
+4. `assert.notEqual`: This is used to compare two values and make sure they are not equal. For example:
+```ts
+assert.notEqual(x, 5);
+```
+This tells the compiler that the variable `x` is never equal to 5.
+
+5. `assert.strictEqual`: This is used to compare two values and make sure they are strictly equal (i.e., they have the same type and value). For example:
+```ts
+assert.strictEqual(x, 5);
+```
+This tells the compiler that the variable `x` is always strictly equal to 5.
+
+6. `assert.notStrictEqual`: This is used to compare two values and make sure they are not strictly equal (i.e., they have different types or values). For example:
+```ts
+assert.notStrictEqual(x, 5);
+```
+This tells the compiler that the variable `x` is never strictly equal to 5.
+
+7. `assert.instanceOf`: This is used to check if a value is an instance of a particular class. For example:
+```ts
+assert.instanceOf(x, MyClass);
+```
+This tells the compiler that the variable `x` is always an instance of the class `MyClass`.
+
+8. `assert.notInstanceOf`: This is used to check if a value is not an instance of a particular class. For example:
+```ts
+assert.notInstanceOf(x, MyClass);
+```
+This tells the compiler that the variable `x` is never an instance of the class `MyClass`.
+
+9. `assert.typeOf`: This is used to check the type of a value. For example:
+```ts
+assert.typeOf(x, "number");
+```
+This tells the compiler that the variable `x` is always a number.
+
+10. `assert.notTypeOf`: This is used to check that a value is not of a particular type. For example:
+```ts
+assert.notTypeOf(x, "number");
+```
+This tells the compiler that the variable `x` is never a number.
+
+These are just a few examples of the different types of assertions that can be used in TypeScript. By using assertions, you can make your code more expressive and easier to understand, and you can also help the compiler catch errors and inconsistencies that might otherwise go unnoticed.
+
+
+## Type Inference
+
+Type inference in TypeScript is a process where the type of a variable or expression is automatically inferred by the compiler based on the context in which it is used. This means that you don't have to explicitly specify the type of a variable or expression, as the compiler can infer it from the code.
+
+Type inference is useful when you want to write concise code that is easy to read and understand. It can also help you catch errors and inconsistencies in your code, as the compiler will check the types of variables and expressions for you.
+
+Here's an example of how type inference works in TypeScript:
+```ts
+let x = 5;
+let y = "hello";
+
+function add(a: number, b: number) {
+  return a + b;
+}
+
+let result = add(x, y);
+```
+In this example, the type of `x` is inferred to be `number`, as it is initialized with a number literal. The type of `y` is inferred to be `string`, as it is initialized with a string literal. The type of `result` is inferred to be `number`, as it is the result of adding two numbers.
+
+Type inference can also be used with function parameters. For example:
+```ts
+function add(a: number, b: number) {
+  return a + b;
+}
+
+let result = add(5, "hello");
+```
+In this example, the type of `result` is inferred to be `number`, as it is the result of adding a number and a string.
+
+Type inference can also be used with interfaces and classes. For example:
+```ts
+interface Person {
+  name: string;
+  age: number;
+}
+
+class Student implements Person {
+  name: string;
+  age: number;
+
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+}
+
+let student = new Student("John", 25);
+```
+In this example, the type of `student` is inferred to be `Student`, as it is created using the `new` keyword and the `Student` class. The type of `student.name` is inferred to be `string`, as it is a property of the `Student` class. The type of `student.age` is inferred to be `number`, as it is a property of the `Student` class.
+
+Type inference can also be used with generics. For example:
+```ts
+function identity<T>(arg: T): T {
+  return arg;
+}
+
+let result = identity(5);
+```
+In this example, the type of `result` is inferred to be `number`, as it is the result of calling the `identity` function with a number argument.
+
+Overall, type inference is a powerful feature of TypeScript that can help you write more concise and expressive code, while also catching errors and inconsistencies.
+
+
