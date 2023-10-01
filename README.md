@@ -784,7 +784,7 @@ In this example, the `myVariable` variable is declared to be of type `never`, wh
 
 Using the `never` type can help you catch errors and prevent unexpected behavior in your code. It can also make your code more readable and easier to understand, as it clearly indicates which functions and variables should never be called or assigned a value.
 
-Assertions
+# Assertions
 -----------
 
 In TypeScript, assertions are a way to tell the compiler that a certain condition is always true at a specific point in the code. This can be useful for a few reasons:
@@ -858,7 +858,7 @@ This tells the compiler that the variable `x` is never a number.
 These are just a few examples of the different types of assertions that can be used in TypeScript. By using assertions, you can make your code more expressive and easier to understand, and you can also help the compiler catch errors and inconsistencies that might otherwise go unnoticed.
 
 
-## Type Inference
+# Type Inference
 ------------------
 Type inference in TypeScript is a process where the type of a variable or expression is automatically inferred by the compiler based on the context in which it is used. This means that you don't have to explicitly specify the type of a variable or expression, as the compiler can infer it from the code.
 
@@ -921,7 +921,7 @@ In this example, the type of `result` is inferred to be `number`, as it is the r
 Overall, type inference is a powerful feature of TypeScript that can help you write more concise and expressive code, while also catching errors and inconsistencies.
 
 
-## Combining Types
+# Combining Types
 
 ### 1. Union Type
 
@@ -1173,7 +1173,7 @@ The `keyof` operator is a powerful tool for working with objects in TypeScript, 
 
 
 
-## Type guards / Narrowing 
+# Type guards / Narrowing 
 
 Type guards and narrowing are two related concepts in TypeScript that help you to work with the type system more effectively.
 
@@ -1208,7 +1208,7 @@ In this example, the `typeof` operator is used to check if the value is a string
 Narrowing can be useful when you need to work with a value that could have multiple types, but you know that it must be a specific type in a certain context. By narrowing the type of the value, you can ensure that you're working with the correct type and avoid type errors.
 
 
-## Typescript Functions
+# Typescript Functions
 
 In TypeScript, functions are first-class citizens, which means they can be treated like any other variable. Here are some key features of functions in TypeScript:
 
