@@ -921,3 +921,252 @@ In this example, the type of `result` is inferred to be `number`, as it is the r
 Overall, type inference is a powerful feature of TypeScript that can help you write more concise and expressive code, while also catching errors and inconsistencies.
 
 
+## Combining Types
+
+### 1. Union Type
+
+In TypeScript, union types are a way to represent a value that can be one of several different types. Union types are created by combining multiple types using the `|` (pipe) character.
+
+For example, the following is a union type that represents a value that can be either a string or a number:
+```ts
+type MyUnionType = string | number;
+```
+This means that a variable of type `MyUnionType` can be assigned a value of either type `string` or type `number`.
+
+Here are some examples of how to use union types in TypeScript:
+
+1. Function parameters: You can use union types as function parameters to allow the function to accept multiple types of arguments. For example:
+```ts
+function myFunction(param: string | number) {
+  // do something with param
+}
+```
+This function can be called with either a string or a number as an argument.
+
+2. Return types: You can use union types as return types to indicate that a function can return multiple types of values. For example:
+```ts
+function myFunction(): string | number {
+  // do something
+  return "hello";
+}
+```
+This function can return either a string or a number.
+
+3. Type aliases: You can use union types to create type aliases that represent a set of types. For example:
+```ts
+type MyUnionType = string | number;
+
+function myFunction(param: MyUnionType) {
+  // do something with param
+}
+```
+This creates a type alias `MyUnionType` that represents a value that can be either a string or a number. The `myFunction` function can then be called with a value of type `MyUnionType`.
+
+4. Intersection types: You can use union types in combination with intersection types to create a type that represents a value that can be either of multiple types, but also has certain properties in common. For example:
+```ts
+type MyUnionType = string | number;
+type MyIntersectionType = MyUnionType & { name: string };
+
+function myFunction(param: MyIntersectionType) {
+  // do something with param
+}
+```
+This creates a type `MyIntersectionType` that represents a value that can be either a string or a number, but also has a `name` property that is a string. The `myFunction` function can then be called with a value of type `MyIntersectionType`.
+
+Union types are a powerful feature in TypeScript that can help you create more expressive and flexible types. By using union types, you can represent a value that can be one of several different types, and you can also use them in combination with other types to create more complex and expressive types.
+
+### 2.Intersection Type
+
+In TypeScript, intersection types are a way to combine multiple types into a single type. An intersection type is created by using the `&` (ampersand) symbol between two or more types.
+
+For example, the following code defines an intersection type `MyIntersectionType` that combines the types `string` and `number`:
+```ts
+type MyIntersectionType = string & number;
+```
+This means that a value of type `MyIntersectionType` can be either a string or a number, but not both.
+
+Here are some examples of how to use intersection types in TypeScript:
+
+1. Function parameters: You can use intersection types as function parameters to allow the function to accept multiple types of arguments. For example:
+```ts
+function myFunction(param: string & number) {
+  // do something with param
+}
+```
+This function can be called with either a string or a number as an argument.
+
+2. Return types: You can use intersection types as return types to indicate that a function can return multiple types of values. For example:
+```ts
+function myFunction(): string & number {
+  // do something
+  return "hello";
+}
+```
+This function can return either a string or a number.
+
+3. Type aliases: You can use intersection types to create type aliases that represent a set of types. For example:
+```ts
+type MyIntersectionType = string & number;
+
+function myFunction(param: MyIntersectionType) {
+  // do something with param
+}
+```
+This creates a type alias `MyIntersectionType` that represents a value that can be either a string or a number. The `myFunction` function can then be called with a value of type `MyIntersectionType`.
+
+4. Intersection types with other types: You can use intersection types in combination with other types to create more complex types. For example:
+```ts
+type MyIntersectionType = string & number & { name: string };
+
+function myFunction(param: MyIntersectionType) {
+  // do something with param
+}
+```
+This creates a type `MyIntersectionType` that represents a value that can be either a string, a number, or an object with a `name` property that is a string. The `myFunction` function can then be called with a value of type `MyIntersectionType`.
+
+Intersection types are a powerful feature in TypeScript that can help you create more expressive and flexible types. By using intersection types, you can represent a value that can be one of several different types, and you can also use them in combination with other types to create more complex and expressive types.
+
+### 3.Type Aliases
+
+Type aliases in TypeScript are a way to give a new name to an existing type.They are defined using the `type` keyword, followed by the name of the alias, and the type that it should be an alias for. This can be useful for a few reasons:
+
+1. To simplify complex types: Type aliases can be used to give a simpler name to a complex type, making it easier to read and understand.
+2. To avoid repetition: If you have a type that is used in multiple places in your code, you can define a type alias for it and use the alias instead of the full type. This can help to avoid repetition and make your code more concise.
+3. To create a new type: Type aliases can also be used to create a new type that is a combination of existing types. For example, you can create a type alias for a tuple of two strings, or a type alias for a function that takes a string and returns a number.
+
+```ts
+type MyType = string;
+```
+This defines a type alias called MyType that is an alias for the string type. 
+
+Here is an example of how to define a type alias in TypeScript:
+```ts
+type MyType = string | number;
+```
+This defines a type alias called `MyType` that is a union of the `string` and `number` types. You can use this type alias in your code like any other type:
+```ts
+function myFunction(param: MyType) {
+  // do something with param
+}
+```
+Type aliases can also be used with interfaces and classes, for example:
+```ts
+interface MyInterface {
+  myProperty: MyType;
+}
+```
+This defines an interface called `MyInterface` that has a property called `myProperty` of type `MyType`.
+
+It's also possible to use type aliases with generics, for example:
+```ts
+type MyGenericType<T> = T | MyType;
+```
+This defines a generic type called `MyGenericType` that is a union of the type parameter `T` and the `MyType` type.
+
+Here are some examples of how to use type aliases in TypeScript:
+
+1. Defining a type alias for a complex type:
+```ts
+type MyComplexType = {
+  name: string;
+  age: number;
+  address: {
+    street: string;
+    city: string;
+    state: string;
+    zip: number;
+  };
+};
+```
+This defines a type alias called `MyComplexType` that is an alias for a complex type with four properties: `name`, `age`, `address`, and `zip`.
+
+2. Using a type alias to avoid repetition:
+```ts
+type MyType = string;
+
+function myFunction(param: MyType) {
+  // do something with param
+}
+
+myFunction("hello");
+```
+This defines a type alias called `MyType` that is an alias for the `string` type. The `myFunction` function takes a parameter of type `MyType`, which is the same as the `string` type.
+
+3. Creating a new type using type aliases:
+```ts
+type MyTuple = [string, number];
+
+function myFunction(param: MyTuple) {
+  // do something with param
+}
+
+myFunction(["hello", 123]);
+```
+This defines a type alias called `MyTuple` that is a tuple of two types: `string` and `number`. The `myFunction` function takes a parameter of type `MyTuple`, which is the same as the tuple type `[string, number]`.
+
+4. Providing a more descriptive name for a type:
+```ts
+type MyType = {
+  name: string;
+  age: number;
+};
+
+function myFunction(param: MyType) {
+  // do something with param
+}
+
+myFunction({ name: "John", age: 30 });
+```
+This defines a type alias called `MyType` that is an alias for a type with two properties: `name` and `age`. The `myFunction` function takes a parameter of type `MyType`, which is the same as the type with two properties.
+
+Type aliases are a powerful feature in TypeScript that can help you to create more expressive and flexible types in your code. They can be used in a variety of ways, such as to simplify complex types, avoid repetition, create new types, and provide more descriptive names for types.
+
+
+### 4. keyof operator
+
+The `keyof` operator in TypeScript is used to get the keys of an object type as a union of string literals. It is often used in conjunction with the `in` operator to check if a property exists on an object.
+
+Here is an example of how to use the `keyof` operator:
+```ts
+type Person = {
+  name: string;
+  age: number;
+};
+
+const person: Person = {
+  name: 'John',
+  age: 30
+};
+
+const keys: keyof Person = 'name' | 'age';
+
+console.log(keys); // Output: 'name' | 'age'
+```
+In this example, the `keys` variable is assigned the value `'name' | 'age'`, which is a union of string literals that represents the keys of the `Person` object.
+
+The `keyof` operator can also be used with interfaces and classes, like this:
+```ts
+interface Person {
+  name: string;
+  age: number;
+}
+
+class PersonImpl implements Person {
+  name: string;
+  age: number;
+
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+}
+
+const person: Person = new PersonImpl('John', 30);
+
+const keys: keyof Person = 'name' | 'age';
+
+console.log(keys); // Output: 'name' | 'age'
+```
+In this example, the `keys` variable is assigned the value `'name' | 'age'`, which is a union of string literals that represents the keys of the `Person` interface.
+
+The `keyof` operator is a powerful tool for working with objects in TypeScript, and it can help you to write more expressive and flexible code.
