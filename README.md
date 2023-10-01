@@ -1206,3 +1206,91 @@ if (typeof value === 'string') {
 In this example, the `typeof` operator is used to check if the value is a string. If it is, the type of the value is narrowed to `string`, and you can access the `length` property without getting a type error.
 
 Narrowing can be useful when you need to work with a value that could have multiple types, but you know that it must be a specific type in a certain context. By narrowing the type of the value, you can ensure that you're working with the correct type and avoid type errors.
+
+
+## Typescript Functions
+
+In TypeScript, functions are first-class citizens, which means they can be treated like any other variable. Here are some key features of functions in TypeScript:
+
+1. Function Declaration: Functions can be declared using the `function` keyword, followed by the function name and a list of parameters in parentheses. For example:
+```ts
+function add(x: number, y: number): number {
+  return x + y;
+}
+```
+2. Function Expressions: Functions can also be defined using function expressions, which are similar to function declarations but do not have a name. For example:
+```ts
+const add = function(x: number, y: number): number {
+  return x + y;
+};
+```
+3. Arrow Functions: TypeScript also supports arrow functions, which are a concise way to define functions. Arrow functions use the `=>` operator to separate the parameters from the function body. For example:
+```ts
+const add = (x: number, y: number): number => x + y;
+```
+4. Function Types: Functions can have types, which specify the types of the parameters and the return value. For example:
+```ts
+function add(x: number, y: number): number {
+  return x + y;
+}
+```
+In this example, the `add` function takes two `number` parameters and returns a `number`.
+
+5. Generic Functions: TypeScript also supports generic functions, which can work with multiple types. For example:
+```ts
+function identity<T>(arg: T): T {
+  return arg;
+}
+```
+In this example, the `identity` function takes a single parameter of type `T` and returns a value of the same type.
+
+6. Function Overloading: TypeScript also supports function overloading, which allows you to define multiple functions with the same name but different parameter lists. For example:
+```ts
+function add(x: number, y: number): number;
+function add(x: string, y: string): string;
+function add(x: any, y: any): any {
+  return x + y;
+}
+```
+In this example, the `add` function is defined with two overloads: one that takes two `number` parameters and returns a `number`, and another that takes two `string` parameters and returns a `string`. The implementation of the function is the same for both overloads.
+
+7. Function Parameters: Functions can also have default parameters, which are used if the function is called with fewer arguments than the number of parameters. 
+For example:
+```ts
+function add(x: number, y: number = 0): number {
+  return x + y;
+} 
+```
+
+In this example, the add function takes two number parameters, x and y, and returns their sum. If the function is called with only one argument, the value of y is set to 0.
+
+8. Function Return Types: Functions can also have return types, which specify the type of the value that the function returns. For example:
+```ts
+function add(x: number, y: number): number {
+  return x + y;
+}
+```
+In this example, the add function takes two number parameters, x and y, and returns a number.
+
+9. Function Rest Parameters: Functions can also have rest parameters, which allow you to pass an arbitrary number of arguments to a function. For example:
+```ts
+function add(...numbers: number[]): number {
+  return numbers.reduce((a, b) => a + b, 0);
+}
+
+```
+
+In this example, the add function takes an arbitrary number of number arguments and returns their sum.
+
+10. Function Spread Operator: Functions can also use the spread operator to pass an array of arguments to a function. For example:
+```ts
+function add(x: number, y: number): number {
+  return x + y;
+}
+
+const numbers = [1, 2, 3, 4, 5];
+const result = add(...numbers);
+```
+In this example, the add function takes two number parameters, x and y, and returns their sum. The numbers array is passed to the add function using the spread operator, which allows you to pass an arbitrary number of arguments to the function.
+
+These are just a few examples of the features and capabilities of functions in TypeScript. With these features, you can write robust and maintainable code that is easy to read and understand.
