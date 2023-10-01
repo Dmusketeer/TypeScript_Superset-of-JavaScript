@@ -859,7 +859,7 @@ These are just a few examples of the different types of assertions that can be u
 
 
 ## Type Inference
-
+------------------
 Type inference in TypeScript is a process where the type of a variable or expression is automatically inferred by the compiler based on the context in which it is used. This means that you don't have to explicitly specify the type of a variable or expression, as the compiler can infer it from the code.
 
 Type inference is useful when you want to write concise code that is easy to read and understand. It can also help you catch errors and inconsistencies in your code, as the compiler will check the types of variables and expressions for you.
