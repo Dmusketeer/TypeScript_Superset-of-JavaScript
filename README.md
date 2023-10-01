@@ -1170,3 +1170,39 @@ console.log(keys); // Output: 'name' | 'age'
 In this example, the `keys` variable is assigned the value `'name' | 'age'`, which is a union of string literals that represents the keys of the `Person` interface.
 
 The `keyof` operator is a powerful tool for working with objects in TypeScript, and it can help you to write more expressive and flexible code.
+
+
+
+## Type guards / Narrowing 
+
+Type guards and narrowing are two related concepts in TypeScript that help you to work with the type system more effectively.
+
+Type guards are a way to narrow the type of a value based on a condition. They allow you to specify a condition that must be true for a value to be considered of a certain type. For example, you can use a type guard to ensure that a value is a string before trying to access its `length` property.
+
+Here's an example of a type guard:
+```ts
+function isString(value: any): value is string {
+  return typeof value === 'string';
+}
+```
+This function takes a value of type `any` and returns a boolean indicating whether the value is a string. You can use this function to narrow the type of a value like this:
+```ts
+const value: any = 'hello';
+if (isString(value)) {
+  console.log(value.length); // value is now of type string
+}
+```
+In this example, the `isString` function is used to narrow the type of the `value` variable from `any` to `string`. This allows you to access the `length` property of the string without getting a type error.
+
+`Narrowing` is a related concept that refers to the process of reducing the range of possible types for a value based on a condition. Narrowing can be done using type guards, but it can also be done using other techniques such as using the `typeof` operator or using the `instanceof` operator.
+
+Here's an example of narrowing using the `typeof` operator:
+```ts
+const value: any = 'hello';
+if (typeof value === 'string') {
+  console.log(value.length); // value is now of type string
+}
+```
+In this example, the `typeof` operator is used to check if the value is a string. If it is, the type of the value is narrowed to `string`, and you can access the `length` property without getting a type error.
+
+Narrowing can be useful when you need to work with a value that could have multiple types, but you know that it must be a specific type in a certain context. By narrowing the type of the value, you can ensure that you're working with the correct type and avoid type errors.
