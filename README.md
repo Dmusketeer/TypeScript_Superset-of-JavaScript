@@ -1,5 +1,53 @@
 # TypeScript (Superset of JavaScript)
 
+## Terminology
+
+### Strongly typed languages & Loosely typed languages
+------------------------------------------------------
+Strongly typed languages and loosely typed languages are two different approaches to type systems in programming languages.
+
+A `strongly typed language` is a language that has a rigid type system, which means that the type of a variable is fixed at compile-time and cannot be changed at run-time. This means that once a variable is declared with a certain type, it can only hold values of that type and cannot be assigned values of a different type without explicit type conversion.
+
+For example, in a `strongly typed language` like Typescript,C++, if you declare a variable as an integer, you cannot assign a string value to it without explicit type conversion.
+```ts
+let age:number = 6;
+age="5"
+console.log(age); //Type 'string' is not assignable to type 'number'.
+```
+Strongly typed languages are often used in applications where type safety is critical, such as in embedded systems, financial applications, and operating systems. They provide a high level of type safety, which can help prevent errors and make code easier to understand and maintain.
+
+On the other hand, a `loosely typed language` is a language that has a flexible type system, which means that the type of a variable can be changed at run-time. This means that a variable can be assigned values of different types without explicit type conversion.
+
+For example, in a loosely typed language like JavaScript, you can assign a string value to a variable that was previously declared as an integer.
+```js
+var x = 5;
+x = "hello"; // no error, x is now a string
+```
+Loosely typed languages are often used in web development, scripting languages, and rapid prototyping. They provide a high level of flexibility and can be easier to learn and use, but they can also lead to type errors and make code harder to understand and maintain.
+
+In summary, strongly typed languages are more type-safe and provide a higher level of type safety, while loosely typed languages are more flexible and provide a higher level of flexibility. The choice between the two depends on the specific requirements of the project and the preferences of the developer.
+
+### Static type language & Dynamic type language
+------------------------------------------------
+
+- A static type language is a programming language that checks the types of variables at compile-time, before the code is executed. This means that the type of a variable is determined when the code is compiled, and it cannot be changed at runtime.
+
+For example, in a static type language like TypeScript,C++, if you declare a variable as an integer, it can only hold integer values. If you try to assign a string value to that variable, the compiler will generate an error.
+
+- A dynamic type language is a programming language that checks the types of variables at runtime, while the code is being executed. This means that the type of a variable can change during the execution of the program.
+
+For example, in a dynamic type language like JavaScript,Python, you can assign a string value to a variable that was previously declared as an integer. The type of the variable will change to string, and the program will continue to execute without generating an error.
+
+Here are some key differences between static and dynamic type languages:
+
+* Static type languages are more type-safe, which means that they are better at preventing type errors and ensuring that the code is correct.
+* Dynamic type languages are more flexible, which means that they can be easier to use and more forgiving of mistakes.
+* Static type languages are typically faster, because the type checking is done at compile-time rather than at runtime.
+* Dynamic type languages are typically more flexible, because the type of a variable can be changed during the execution of the program.
+
+Overall, the choice between a static type language and a dynamic type language depends on the specific requirements of the project and the preferences of the developer.
+
+
 ## INTRODUCTION
 
 TypeScript Vs JavaScript
@@ -57,6 +105,7 @@ This will install TypeScript globally on your system.
 tsc --init
 ```
 This will create a new TypeScript project with a default configuration.
+
 4. Configure TypeScript: Once you have created a new TypeScript project, you can configure it by editing the `tsconfig.json` file. This file contains the configuration options for your TypeScript project.
 
 Here are some common configuration options you might want to set:
@@ -281,6 +330,7 @@ let name: void;
 In this example, the `name` variable is declared with the type `void`, which means that it is not supposed to have a value.
 
 It's worth noting that `void` is not the same as `undefined`. `undefined` is a value that represents the absence of a value, while `void` is a type that represents the absence of a value. In other words, `void` is a type that can be used to describe the absence of a value, while `undefined` is a value that can be used to represent the absence of a value.
+
 
 ### 5. Undefined Type
 ----------------------
