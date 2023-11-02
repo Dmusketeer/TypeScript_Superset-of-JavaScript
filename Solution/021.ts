@@ -1,5 +1,4 @@
 // 21. Implement a TypeScript program to generate a random password.
-
 function generateRandomPassword(length: number): string {
     const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_=+";
     let password = "";
