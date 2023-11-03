@@ -6,6 +6,5 @@ const vowelsCount = (str: string): number => {
     return matches ? matches.length : 0;
 }
 
-
 let word = "Dheeraj"
 console.log(vowelsCount(word))
