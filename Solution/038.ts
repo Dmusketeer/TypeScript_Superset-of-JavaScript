@@ -14,3 +14,5 @@ const arr1: number[] = [2, 4, 10, 3, 24]
 console.log(removeSpecificElement(arr1, 3))
 console.log(removeSpecificElement(arr1, 10))
 console.log(removeSpecificElement(arr1, 23))
+
+export { }
