@@ -11,7 +11,7 @@ function isPrime(num: number): boolean {
     }
 
     // Check for primality using a loop starting from 5 and incrementing by 6
-    for (let i = 5; i * i <= num; i += 6) {
+    for (let i = 5; i <= Math.sqrt(num); i += 6) {
         if (num % i === 0 || num % (i + 2) === 0) {
             return false;
         }
@@ -21,7 +21,7 @@ function isPrime(num: number): boolean {
 }
 
 // Example usage:
-const num1 = 6; // Prime number
+const num1 = 5; // Prime number
 const num2 = 9; // Not a prime number
 
 console.log(isPrime(num1)); // true
