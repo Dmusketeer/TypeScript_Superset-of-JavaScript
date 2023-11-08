@@ -10,7 +10,7 @@ function isPrime(num) {
         return false;
     }
     // Check for primality using a loop starting from 5 and incrementing by 6
-    for (var i = 5; i * i <= num; i += 6) {
+    for (var i = 5; i <= Math.sqrt(num); i += 6) {
         if (num % i === 0 || num % (i + 2) === 0) {
             return false;
         }
@@ -18,7 +18,7 @@ function isPrime(num) {
     return true;
 }
 // Example usage:
-var num1 = 6; // Prime number
+var num1 = 5; // Prime number
 var num2 = 9; // Not a prime number
 console.log(isPrime(num1)); // true
 console.log(isPrime(num2)); // false
