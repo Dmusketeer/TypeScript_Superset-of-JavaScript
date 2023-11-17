@@ -8,7 +8,7 @@ const longestSubstringWithoutRepeating = (arr: string): string => {
     for (let i = 0; i < arr.length; i++) {
         const currentChar = arr[i]
         if (charIndexMap[currentChar] !== undefined && charIndexMap[currentChar] >= start) {
-            // If the character is repeated and the repeated character is in the current substring
+            // If the character is repeated and the repeated character is in the current substring.
             start = charIndexMap[currentChar] + 1
         }
         charIndexMap[currentChar] = i
@@ -18,13 +18,11 @@ const longestSubstringWithoutRepeating = (arr: string): string => {
             longestSubstringStart = start
         }
     }
-
     const longestSubstring = arr.slice(longestSubstringStart, longestSubstringStart + maxLength)
     return longestSubstring
 }
 
-
 // Example usage:
-const inputString = "abcabcb";
+const inputString = "Dheeraj";
 const result = longestSubstringWithoutRepeating(inputString);
-console.log(result); // Output: "abc"
+console.log(result); // Output: "eraj"
