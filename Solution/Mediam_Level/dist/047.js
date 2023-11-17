@@ -7,7 +7,7 @@ var longestSubstringWithoutRepeating = function (arr) {
     for (var i = 0; i < arr.length; i++) {
         var currentChar = arr[i];
         if (charIndexMap[currentChar] !== undefined && charIndexMap[currentChar] >= start) {
-            // If the character is repeated and the repeated character is in the current substring
+            // If the character is repeated and the repeated character is in the current substring.
             start = charIndexMap[currentChar] + 1;
         }
         charIndexMap[currentChar] = i;
@@ -21,6 +21,6 @@ var longestSubstringWithoutRepeating = function (arr) {
     return longestSubstring;
 };
 // Example usage:
-var inputString = "abcabcb";
+var inputString = "Dheeraj";
 var result = longestSubstringWithoutRepeating(inputString);
-console.log(result); // Output: "abc"
+console.log(result); // Output: "eraj"
