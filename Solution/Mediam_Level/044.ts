@@ -45,3 +45,5 @@ if (resultMatrix !== null) {
     console.log("Result Matrix (A * B):");
     console.log(resultMatrix);
 }
+
+export { }
