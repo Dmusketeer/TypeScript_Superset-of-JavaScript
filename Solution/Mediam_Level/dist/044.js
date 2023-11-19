@@ -1,3 +1,5 @@
+"use strict";
+exports.__esModule = true;
 var multiplyMatrices = function (matrixA, matrixB) {
     var rowsA = matrixA.length;
     var colsA = matrixA[0].length;
