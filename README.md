@@ -6,6 +6,7 @@
 ------------------------------------------------------
 Strongly typed languages and loosely typed languages are two different approaches to type systems in programming languages.
 
+
 A `strongly typed language` is a language that has a rigid type system, which means that the type of a variable is fixed at compile-time and cannot be changed at run-time. This means that once a variable is declared with a certain type, it can only hold values of that type and cannot be assigned values of a different type without explicit type conversion.
 
 For example, in a `strongly typed language` like Typescript,C++, if you declare a variable as an integer, you cannot assign a string value to it without explicit type conversion.
